@@ -1,6 +1,6 @@
 const path = require('path')
 
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -59,13 +59,11 @@ module.exports = {
   devServer: {
     contentBase: outputDir,
     compress: true,
-    port: 1234
+    port: 1234,
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      { from: './src/favicon' }
-    ]),
+    new CopyWebpackPlugin([{ from: './src/favicon' }]),
     new HtmlWebpackPlugin({
       minify: prod,
       template: './src/index.html',
