@@ -8,9 +8,12 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "prettier": "prettier --write 'src/**/*.svelte' 'src/**/*.js' 'src/**/*.svelte' 'src/**/*.pcss'",
-    "start": "webpack-dev-server"
+    "start:api": "goreload server.go",
+    "start:client": "webpack-dev-server",
+    "start": "run-p start:api start:client"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "svelte": "^3.20.1",
     "tailwindcss": "^1.2.0"
   },
