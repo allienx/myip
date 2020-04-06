@@ -3,14 +3,12 @@ package v1
 import (
 	"encoding/json"
 	"net/http"
-	"time"
 )
 
 type ResponseBody struct {
 	IP        string `json:"ip"`
 	UserAgent string `json:"user_agent"`
 	Origin    string `json:"origin"`
-	TimeMs    int64  `json:"time_ms"`
 }
 
 func writeResponse(w http.ResponseWriter, statusCode int, body interface{}) {
@@ -30,7 +28,6 @@ func InfoHandler(w http.ResponseWriter, r *http.Request) {
 		IP:        ip,
 		UserAgent: ua,
 		Origin:    origin,
-		TimeMs:    time.Now().UnixNano() / 1000000,
 	}
 
 	writeResponse(w, http.StatusOK, body)
