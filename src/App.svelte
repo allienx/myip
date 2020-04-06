@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte'
   import { ipInfo } from './stores/global'
+  import { About } from './components/About'
   import { IpAddressContainer } from './components/IpAddress'
-  import About from './components/About/About.svelte'
   import { Tabs, TabList, Tab, TabContent } from './components/Tabs'
 
   const TabIds = {
