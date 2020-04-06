@@ -69,7 +69,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './src/static/favicon' }]),
+    new CopyWebpackPlugin([
+      { from: './src/static/favicon' },
+      { from: './src/static/img', to: 'img' },
+    ]),
     new HtmlWebpackPlugin({
       minify: prod,
       template: './src/index.html',
