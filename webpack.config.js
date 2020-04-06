@@ -60,10 +60,19 @@ module.exports = {
     contentBase: outputDir,
     compress: true,
     port: 1234,
+    proxy: [
+      {
+        context: ['/api'],
+        target: 'http://localhost:8080',
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: './src/favicon' }]),
+    new CopyWebpackPlugin([
+      { from: './src/static/favicon' },
+      { from: './src/static/img', to: 'img' },
+    ]),
     new HtmlWebpackPlugin({
       minify: prod,
       template: './src/index.html',

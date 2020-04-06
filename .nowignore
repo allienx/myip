@@ -1,3 +1,5 @@
+.goreload
 .tool-versions
 
 README.md
+server.go

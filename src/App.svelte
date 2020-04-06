@@ -1,88 +1,59 @@
 <script>
   import { onMount } from 'svelte'
-  export let date
-  export let isLoading
+  import { ipInfo } from './stores/global'
+  import { About } from './components/About'
+  import { IpAddressContainer } from './components/IpAddress'
+  import { Tabs, TabList, Tab, TabContent } from './components/Tabs'
+
+  const TabIds = {
+    IP: 'ip',
+    ABOUT: 'about',
+  }
 
   onMount(async () => {
-    const res = await fetch('/api/date')
-
-    date = await res.text()
-    isLoading = !date
+    // Initialize global stores.
+    await ipInfo.fetch()
   })
 </script>
 
 <style>
   main {
-    @apply min-h-screen max-w-screen-sm mx-auto flex items-center;
+    @apply max-w-screen-sm mx-auto px-3 pt-12;
   }
 
   h1 {
-    @apply text-5xl font-bold text-center mb-16;
+    @apply mb-12 font-mono font-bold text-5xl text-center;
   }
 
-  h2 {
-    @apply text-2xl font-bold text-center my-8;
-  }
-
-  a {
-    color: #0076ff;
-    border-bottom: 1px solid white;
-    transition: all 0.2s ease;
-  }
-
-  a:hover {
-    border-bottom: 1px solid #0076ff;
-  }
-
-  p {
-    @apply text-center;
-  }
-
-  code {
-    color: #d400ff;
+  footer {
+    @apply flex justify-center my-8;
   }
 </style>
 
 <main>
-  <div>
-    <h1>Svelte + Node.js API</h1>
-    <h2>
-      Deployed with
-      <a href="https://zeit.co/docs" target="_blank" rel="noreferrer noopener">
-        ZEIT Now
-      </a>
-      !
-    </h2>
-    <p>
-      <a
-        href="https://github.com/allienx/myip"
-        target="_blank"
-        rel="noreferrer noopener">
-        This project
-      </a>
-      is a
-      <a href="https://svelte.dev/">Svelte</a>
-      app with three directories,
-      <code>/public</code>
-      for static assets,
-      <code>/src</code>
-      for components and content, and
-      <code>/api</code>
-      which contains a serverless
-      <a href="https://nodejs.org/en/">Node.js</a>
-      function. See
-      <a href="/api/date">
-        <code>api/date</code>
-        for the Date API with Node.js
-      </a>
-      .
-    </p>
-    <br />
-    <h2>The date according to Node.js is:</h2>
-    {#if isLoading}
-      <p>Loading date...</p>
-    {:else}
-      <p>{date}</p>
-    {/if}
-  </div>
+  <h1>ip lookup</h1>
+
+  <Tabs>
+    <TabList>
+      <Tab id={TabIds.IP}>My IP</Tab>
+      <Tab id={TabIds.ABOUT}>About</Tab>
+    </TabList>
+
+    <TabContent id={TabIds.IP}>
+      <IpAddressContainer />
+    </TabContent>
+
+    <TabContent id={TabIds.ABOUT}>
+      <About />
+    </TabContent>
+  </Tabs>
 </main>
+
+<footer>
+  <a
+    href="https://github.com/allienx"
+    target="_blank"
+    rel="noopener noreferrer">
+    <img width="25" src="img/github.svg" alt="GitHub logo" />
+  </a>
+</footer>
