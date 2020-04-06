@@ -1,4 +1,4 @@
-import { Http } from '../http'
+import { Http } from '../Http'
 
 export const ClientInfo = {
   get,
@@ -10,7 +10,7 @@ async function get() {
 
   if (error) {
     return {
-      error: {
+      err: {
         code,
         status,
         message: data.message,
@@ -23,9 +23,11 @@ async function get() {
 
 function translateInfoResponse(data) {
   return {
-    ip: data.ip,
-    userAgent: data.user_agent,
-    origin: data.origin,
-    timeMs: data.time_ms,
+    data: {
+      ip: data.ip,
+      userAgent: data.user_agent,
+      origin: data.origin,
+      timeMs: data.time_ms,
+    },
   }
 }

@@ -1,25 +1,12 @@
 <script>
-  import { onDestroy } from 'svelte'
-  import { clientInfo } from '../../stores/api'
+  import { ipInfo } from '../../stores/global'
   import IpAddress from './IpAddress.svelte'
-
-  let isLoading
-  let err
-  let ip
-
-  const unsubscribe = clientInfo.subscribe((state) => {
-    isLoading = !state.isLoaded || state.isFetching
-    err = state.err
-    ip = state.data && state.data.ip
-  })
-
-  onDestroy(unsubscribe)
 </script>
 
-{#if isLoading}
+{#if !$ipInfo.isLoaded || $ipInfo.isFetching}
   <div>Loading...</div>
-{:else if err}
+{:else if $ipInfo.err}
   <div>Error</div>
 {:else}
-  <IpAddress {ip} />
+  <IpAddress ip={$ipInfo.data.ip} />
 {/if}
