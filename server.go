@@ -9,6 +9,7 @@ import (
 
 func main() {
 	http.HandleFunc("/api/v1/info", v1.InfoHandler)
+	http.HandleFunc("/api/v1/ipapi", v1.IpApiHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

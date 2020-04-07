@@ -5,18 +5,10 @@ import (
 	"net/http"
 )
 
-type ResponseBody struct {
+type InfoResponseBody struct {
 	IP        string `json:"ip"`
 	UserAgent string `json:"user_agent"`
 	Origin    string `json:"origin"`
-}
-
-func writeResponse(w http.ResponseWriter, statusCode int, body interface{}) {
-	b, _ := json.Marshal(body)
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(statusCode)
-	_, _ = w.Write(b)
 }
 
 func InfoHandler(w http.ResponseWriter, r *http.Request) {
@@ -24,11 +16,15 @@ func InfoHandler(w http.ResponseWriter, r *http.Request) {
 	ua := r.UserAgent()
 	origin := r.Header.Get("Origin")
 
-	body := ResponseBody{
+	body := InfoResponseBody{
 		IP:        ip,
 		UserAgent: ua,
 		Origin:    origin,
 	}
 
-	writeResponse(w, http.StatusOK, body)
+	b, _ := json.Marshal(body)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	_, _ = w.Write(b)
 }
