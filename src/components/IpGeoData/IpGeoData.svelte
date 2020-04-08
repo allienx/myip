@@ -1,5 +1,6 @@
 <script>
   import Clipboard from 'clipboard'
+  import { CountryFlag } from '../CountryFlag'
   import { onMount } from 'svelte'
 
   export let lat
@@ -42,6 +43,10 @@
   .spacer {
     @apply h-3;
   }
+
+  .country {
+    @apply flex items-center;
+  }
 </style>
 
 <table>
@@ -72,7 +77,10 @@
   <tr class="spacer" />
   <tr class="clippy" data-clipboard-text={country}>
     <td>Country</td>
-    <td>{country}</td>
+    <td class="country">
+      {country}
+      <CountryFlag class="ml-3" width="45" {countryCode} />
+    </td>
   </tr>
   <tr class="spacer" />
   <tr class="clippy" data-clipboard-text={timezone}>
