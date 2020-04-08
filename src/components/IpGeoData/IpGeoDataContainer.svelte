@@ -8,7 +8,8 @@
   afterUpdate(async () => {
     const newIp = $ipInfo.data && $ipInfo.data.ip
 
-    if (newIp && newIp !== ip) {
+    // Only fetch geo data when the ip address is first loaded.
+    if (newIp && newIp !== ip && !$ipGeoData.isLoaded) {
       ip = $ipInfo.data && $ipInfo.data.ip
 
       await ipGeoData.fetch(ip)
