@@ -46,6 +46,22 @@
   </li>
 </ul>
 
+<ul>
+  Dependencies:
+  <li>
+    <a href="https://ipapi.com/">ipapi</a>
+    - IP address geolocation
+  </li>
+  <li>
+    <a href="https://github.com/zenorocha/clipboard.js">clipboard.js</a>
+    - Copying text to the clipboard
+  </li>
+  <li>
+    <a href="https://flagpedia.net/">flagpedia</a>
+    - Country flags
+  </li>
+</ul>
+
 <p>
   Hosted and auto-deployed with
   <a href="https://zeit.co" target="_blank" rel="noopener noreferrer">
