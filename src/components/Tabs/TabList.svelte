@@ -1,6 +1,6 @@
 <style>
   ul {
-    @apply flex;
+    @apply flex border-b;
   }
 </style>
 
