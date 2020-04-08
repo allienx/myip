@@ -6,28 +6,28 @@ export const ClientInfo = {
 
 async function get() {
   const url = '/api/v1/info'
-  const { error, code, status, data } = await Http.get(url)
+  const { error, code, status, body } = await Http.get(url)
 
   if (error) {
     return {
       err: {
         code,
         status,
-        message: data.message,
+        message: body.message,
       },
     }
   }
 
-  return translateInfoResponse(data)
+  return translateInfoResponse(body)
 }
 
-function translateInfoResponse(data) {
+function translateInfoResponse(body) {
   return {
     data: {
-      ip: data.ip,
-      userAgent: data.user_agent,
-      origin: data.origin,
-      timeMs: data.time_ms,
+      ip: body.ip,
+      userAgent: body.user_agent,
+      origin: body.origin,
+      timeMs: body.time_ms,
     },
   }
 }

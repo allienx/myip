@@ -17,7 +17,7 @@
   a {
     @apply border-b border-white border-solid text-blue-600;
 
-    transition: ease all 0.4s;
+    transition: all 0.4s ease-in-out;
   }
 
   a:hover {
@@ -25,7 +25,7 @@
   }
 </style>
 
-<p>A small hobby project that looks up your IP address.</p>
+<p>Simple web app that looks up your IP address.</p>
 
 <ul>
   Built with:

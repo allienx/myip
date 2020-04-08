@@ -20,7 +20,7 @@ async function request({ method, url, params }) {
       code: status,
       status: statusText,
       headers,
-      data,
+      body: data,
     }
   } catch (err) {
     if (err.response) {
@@ -49,7 +49,7 @@ function _badResponseError(res) {
     code: status,
     status: statusText,
     headers,
-    data,
+    body: data,
   }
 }
 
@@ -59,7 +59,7 @@ function _noResponseError(_) {
     code: undefined,
     status: undefined,
     headers: {},
-    data: {
+    body: {
       message: 'No response received from server.',
     },
   }
@@ -71,7 +71,7 @@ function _badRequestError(err) {
     code: undefined,
     status: undefined,
     headers: {},
-    data: {
+    body: {
       message: err.message,
     },
   }

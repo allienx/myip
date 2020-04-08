@@ -3,6 +3,7 @@
   import { ipInfo } from './stores/global'
   import { About } from './components/About'
   import { IpAddressContainer } from './components/IpAddress'
+  import { IpGeoDataContainer } from './components/IpGeoData'
   import { Tabs, TabList, Tab, TabContent } from './components/Tabs'
 
   const TabIds = {
@@ -19,6 +20,8 @@
 <style>
   main {
     @apply max-w-screen-sm mx-auto px-3 pt-12;
+
+    min-height: calc(100vh - 50px);
   }
 
   h1 {
@@ -26,11 +29,13 @@
   }
 
   footer {
-    @apply flex justify-center my-8;
+    @apply flex justify-center items-center;
+
+    height: 50px;
   }
 </style>
 
-<main>
+<main class="md:text-xl text-gray-900">
   <h1>ip lookup</h1>
 
   <Tabs>
@@ -41,6 +46,7 @@
 
     <TabContent id={TabIds.IP}>
       <IpAddressContainer />
+      <IpGeoDataContainer />
     </TabContent>
 
     <TabContent id={TabIds.ABOUT}>
@@ -51,7 +57,7 @@
 
 <footer>
   <a
-    href="https://github.com/allienx"
+    href="https://github.com/allienx/myip"
     target="_blank"
     rel="noopener noreferrer">
     <img width="25" src="img/github.svg" alt="GitHub logo" />
