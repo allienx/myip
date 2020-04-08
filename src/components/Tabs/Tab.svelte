@@ -16,11 +16,13 @@
 
 <style>
   li {
-    @apply block flex-1 mx-4 py-2 px-4 rounded text-center cursor-pointer;
+    @apply cursor-pointer block flex-1 bg-white rounded-t-lg py-2 px-4 text-blue-600 text-center;
+
+    transition: font-weight 0.4s ease-in-out;
   }
 
-  li:hover {
-    @apply bg-gray-200;
+  li.active {
+    @apply -mb-px border-l border-t border-r font-semibold;
   }
 
   li:first-child {
@@ -29,14 +31,6 @@
 
   li:last-child {
     @apply mr-0;
-  }
-
-  .active {
-    @apply bg-blue-500 text-white font-semibold;
-  }
-
-  .active:hover {
-    @apply bg-blue-500;
   }
 </style>
 

@@ -17,7 +17,7 @@
   a {
     @apply border-b border-white border-solid text-blue-600;
 
-    transition: ease all 0.4s;
+    transition: all 0.4s ease-in-out;
   }
 
   a:hover {
@@ -25,7 +25,7 @@
   }
 </style>
 
-<p>A small hobby project that looks up your IP address.</p>
+<p>Simple web app that looks up your IP address.</p>
 
 <ul>
   Built with:
@@ -43,6 +43,22 @@
     <a href="https://golang.org" target="_blank" rel="noopener noreferrer">
       go
     </a>
+  </li>
+</ul>
+
+<ul>
+  Dependencies:
+  <li>
+    <a href="https://ipapi.com/">ipapi</a>
+    - IP address geolocation
+  </li>
+  <li>
+    <a href="https://github.com/zenorocha/clipboard.js">clipboard.js</a>
+    - Copying text to the clipboard
+  </li>
+  <li>
+    <a href="https://flagpedia.net/">flagpedia</a>
+    - Country flags
   </li>
 </ul>
 

@@ -5,7 +5,7 @@
   export let ip
 
   onMount(() => {
-    new Clipboard('#clippy')
+    new Clipboard('.clippy')
   })
 </script>
 
@@ -15,7 +15,7 @@
   }
 
   code {
-    @apply p-4 mr-4 bg-gray-200 rounded font-mono;
+    @apply cursor-pointer p-4 mr-4 bg-gray-200 rounded font-mono;
   }
 
   button {
@@ -24,10 +24,11 @@
 </style>
 
 <div>
-  <code id="ip-address" class="item md:text-2xl">{ip}</code>
+  <code id="ip-address" class="clippy md:text-2xl" data-clipboard-text={ip}>
+    {ip}
+  </code>
   <button
-    id="clippy"
-    class="item"
+    class="clippy"
     data-clipboard-target="#ip-address"
     title="Copy to clipboard">
     <img width="25" src="img/clippy.svg" alt="Copy to clipboard" />
