@@ -33,6 +33,10 @@
 
     height: 50px;
   }
+
+  .github {
+    @apply p-3;
+  }
 </style>
 
 <main class="md:text-xl text-gray-900">
@@ -57,6 +61,7 @@
 
 <footer>
   <a
+    class="github"
     href="https://github.com/allienx/myip"
     target="_blank"
     rel="noopener noreferrer">

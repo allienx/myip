@@ -16,7 +16,7 @@
 
 <style>
   li {
-    @apply block flex-1 mx-4 py-2 px-4 rounded text-center cursor-pointer;
+    @apply cursor-pointer block flex-1 mx-4 py-2 px-4 rounded text-center;
   }
 
   li:hover {

@@ -15,7 +15,7 @@
   }
 
   code {
-    @apply p-4 mr-4 bg-gray-200 rounded font-mono;
+    @apply cursor-pointer p-4 mr-4 bg-gray-200 rounded font-mono;
   }
 
   button {
@@ -24,7 +24,9 @@
 </style>
 
 <div>
-  <code id="ip-address" class="md:text-2xl">{ip}</code>
+  <code id="ip-address" class="clippy md:text-2xl" data-clipboard-text={ip}>
+    {ip}
+  </code>
   <button
     class="clippy"
     data-clipboard-target="#ip-address"

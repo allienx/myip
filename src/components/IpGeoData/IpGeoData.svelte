@@ -23,13 +23,13 @@
   }
 
   tr {
-    @apply mb-4;
+    @apply cursor-pointer mb-4;
 
     transition: color 0.4s ease-in-out;
   }
 
   tr:hover {
-    @apply cursor-pointer text-black;
+    @apply text-black;
   }
 
   td {
