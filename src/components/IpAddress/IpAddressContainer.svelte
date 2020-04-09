@@ -1,5 +1,6 @@
 <script>
   import { ipInfo } from '../../stores/global'
+  import { LoadingSpinner } from '../LoadingSpinner'
   import IpAddress from './IpAddress.svelte'
 </script>
 
@@ -10,7 +11,7 @@
 </style>
 
 {#if !$ipInfo.isLoaded || $ipInfo.isFetching}
-  <div>Loading...</div>
+  <LoadingSpinner class="mx-auto" />
 {:else if $ipInfo.err}
   <div>Error</div>
 {:else}

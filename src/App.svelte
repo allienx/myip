@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from 'svelte'
+  import { afterUpdate, onMount } from 'svelte'
   import { ipInfo } from './stores/global'
   import { About } from './components/About'
   import { IpAddressContainer } from './components/IpAddress'
@@ -11,9 +11,15 @@
     ABOUT: 'about',
   }
 
+  let ip = undefined
+
   onMount(async () => {
     // Initialize global stores.
     await ipInfo.fetch()
+  })
+
+  afterUpdate(() => {
+    ip = $ipInfo.data && $ipInfo.data.ip
   })
 </script>
 
@@ -54,7 +60,10 @@
 
     <TabContent id={TabIds.IP}>
       <IpAddressContainer />
-      <IpGeoDataContainer />
+
+      {#if ip}
+        <IpGeoDataContainer {ip} />
+      {/if}
     </TabContent>
 
     <TabContent id={TabIds.ABOUT}>
