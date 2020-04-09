@@ -49,15 +49,24 @@
 <ul>
   Dependencies:
   <li>
-    <a href="https://ipapi.com/">ipapi</a>
+    <a href="https://ipapi.com/" target="_blank" rel="noopener noreferrer">
+      ipapi
+    </a>
     - IP address geolocation
   </li>
   <li>
-    <a href="https://github.com/zenorocha/clipboard.js">clipboard.js</a>
+    <a
+      href="https://github.com/zenorocha/clipboard.js"
+      target="_blank"
+      rel="noopener noreferrer">
+      clipboard.js
+    </a>
     - Copying text to the clipboard
   </li>
   <li>
-    <a href="https://flagpedia.net/">flagpedia</a>
+    <a href="https://flagpedia.net/" target="_blank" rel="noopener noreferrer">
+      flagpedia
+    </a>
     - Country flags
   </li>
 </ul>
