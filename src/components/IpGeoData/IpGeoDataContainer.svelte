@@ -1,17 +1,13 @@
 <script>
-  import { afterUpdate } from 'svelte'
-  import { ipInfo, ipGeoData } from '../../stores/global'
+  import { onMount } from 'svelte'
+  import { ipGeoData } from '../../stores/global'
+  import { LoadingSpinner } from '../LoadingSpinner'
   import IpGeoData from './IpGeoData'
 
-  let ip = undefined
+  export let ip = undefined
 
-  afterUpdate(async () => {
-    const newIp = $ipInfo.data && $ipInfo.data.ip
-
-    // Only fetch geo data when the ip address is first loaded.
-    if (newIp && newIp !== ip && !$ipGeoData.isLoaded) {
-      ip = $ipInfo.data && $ipInfo.data.ip
-
+  onMount(async () => {
+    if (!$ipGeoData.isLoaded) {
       await ipGeoData.fetch(ip)
     }
   })
@@ -24,7 +20,7 @@
 </style>
 
 {#if !$ipGeoData.isLoaded || $ipGeoData.isFetching}
-  <div>Loading...</div>
+  <LoadingSpinner class="mx-auto" />
 {:else if $ipGeoData.err}
   <div>Error</div>
 {:else}
