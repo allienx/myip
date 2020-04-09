@@ -18,10 +18,16 @@
 </script>
 
 <style>
-  main {
-    @apply max-w-screen-sm mx-auto px-3 pt-12;
+  :global(html, body) {
+    height: 100%;
+  }
 
-    min-height: calc(100vh - 50px);
+  :global(body) {
+    @apply flex flex-col;
+  }
+
+  main {
+    @apply w-full max-w-screen-sm mx-auto flex-grow flex-shrink-0 px-3 pt-12;
   }
 
   h1 {
@@ -29,13 +35,11 @@
   }
 
   footer {
-    @apply flex justify-center items-center;
-
-    height: 50px;
+    @apply flex flex-shrink-0 justify-center items-center;
   }
 
   .github {
-    @apply p-3;
+    @apply p-4;
   }
 </style>
 
