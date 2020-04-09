@@ -24,14 +24,6 @@
 </script>
 
 <style>
-  :global(html, body) {
-    height: 100%;
-  }
-
-  :global(body) {
-    @apply flex flex-col;
-  }
-
   main {
     @apply w-full max-w-screen-sm mx-auto flex-grow flex-shrink-0 px-3 pt-12;
   }
