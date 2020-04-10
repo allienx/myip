@@ -3,7 +3,7 @@
   import { fade } from 'svelte/transition'
   import { TABS_CONTEXT_KEY } from './constants'
 
-  export let id = undefined
+  export let id
 
   const { activeTab } = getContext(TABS_CONTEXT_KEY)
 </script>

@@ -1,7 +1,7 @@
 <script>
   import Clipboard from 'clipboard'
-  import { CountryFlag } from '../CountryFlag'
   import { onMount } from 'svelte'
+  import { CountryFlag } from '~/components/CountryFlag'
 
   export let lat
   export let lon

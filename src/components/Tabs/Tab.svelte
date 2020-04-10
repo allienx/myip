@@ -2,9 +2,10 @@
   import { getContext, onMount } from 'svelte'
   import { TABS_CONTEXT_KEY } from './constants'
 
-  export let id = undefined
+  export let id
 
   const { activeTab, setActiveTab } = getContext(TABS_CONTEXT_KEY)
+
   $: active = $activeTab === id
 
   onMount(() => {

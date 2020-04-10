@@ -1,6 +1,6 @@
 <script>
-  import { ipInfo } from '../../stores/global'
-  import { LoadingSpinner } from '../LoadingSpinner'
+  import { LoadingSpinner } from '~/components/LoadingSpinner'
+  import { ipInfo } from '~/stores/global'
   import IpAddress from './IpAddress.svelte'
 </script>
 

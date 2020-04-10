@@ -1,10 +1,10 @@
 <script>
   import { afterUpdate, onMount } from 'svelte'
-  import { ipInfo } from './stores/global'
-  import { About } from './components/About'
-  import { IpAddressContainer } from './components/IpAddress'
-  import { IpGeoDataContainer } from './components/IpGeoData'
-  import { Tabs, TabList, Tab, TabContent } from './components/Tabs'
+  import { About } from '~/components/About'
+  import { IpAddressContainer } from '~/components/IpAddress'
+  import { IpGeoDataContainer } from '~/components/IpGeoData'
+  import { Tabs, TabList, Tab, TabContent } from '~/components/Tabs'
+  import { ipInfo } from '~/stores/global'
 
   const TabIds = {
     IP: 'ip',

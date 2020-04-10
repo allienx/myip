@@ -1,10 +1,10 @@
 <script>
   import { onMount } from 'svelte'
-  import { ipGeoData } from '../../stores/global'
-  import { LoadingSpinner } from '../LoadingSpinner'
+  import { LoadingSpinner } from '~/components/LoadingSpinner'
+  import { ipGeoData } from '~/stores/global'
   import IpGeoData from './IpGeoData'
 
-  export let ip = undefined
+  export let ip
 
   onMount(async () => {
     if (!$ipGeoData.isLoaded) {
