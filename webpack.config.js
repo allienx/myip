@@ -75,7 +75,6 @@ module.exports = {
       { from: './src/static/img', to: 'img' },
     ]),
     new HtmlWebpackPlugin({
-      minify: prod,
       template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
