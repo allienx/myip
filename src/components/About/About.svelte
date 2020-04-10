@@ -44,35 +44,38 @@
       go
     </a>
   </li>
-</ul>
-
-<ul>
-  Dependencies:
   <li>
-    <a href="https://ipapi.com/" target="_blank" rel="noopener noreferrer">
+    <a href="https://clipboardjs.com" target="_blank" rel="noopener noreferrer">
+      clipboard.js
+    </a>
+  </li>
+  <li>
+    <a href="https://ipapi.com" target="_blank" rel="noopener noreferrer">
       ipapi
     </a>
-    - IP address geolocation
+  </li>
+  <li>
+    <a href="https://flagpedia.net" target="_blank" rel="noopener noreferrer">
+      flagpedia
+    </a>
+  </li>
+  <li>
+    <a href="https://favicon.io" target="_blank" rel="noopener noreferrer">
+      favicon.io
+    </a>
   </li>
   <li>
     <a
-      href="https://github.com/zenorocha/clipboard.js"
+      href="https://realfavicongenerator.net"
       target="_blank"
       rel="noopener noreferrer">
-      clipboard.js
+      RealFaviconGenerator
     </a>
-    - Copying text to the clipboard
-  </li>
-  <li>
-    <a href="https://flagpedia.net/" target="_blank" rel="noopener noreferrer">
-      flagpedia
-    </a>
-    - Country flags
   </li>
 </ul>
 
 <p>
-  Hosted and auto-deployed with
+  Hosted with
   <a href="https://zeit.co" target="_blank" rel="noopener noreferrer">
     ZEIT Now
   </a>

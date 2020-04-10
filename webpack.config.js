@@ -25,6 +25,7 @@ module.exports = {
   resolve: {
     alias: {
       svelte: path.resolve('node_modules', 'svelte'),
+      '~': path.resolve(__dirname, 'src/'),
     },
     extensions: ['.mjs', '.js', '.svelte'],
     mainFields: ['svelte', 'browser', 'module', 'main'],
@@ -74,7 +75,6 @@ module.exports = {
       { from: './src/static/img', to: 'img' },
     ]),
     new HtmlWebpackPlugin({
-      minify: prod,
       template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
