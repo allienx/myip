@@ -1,8 +1,6 @@
 # ip lookup
 
-Simple web app that looks up your IP address.
-
-[myip.now.sh](https://myip.now.sh)
+Simple web app that looks up your IP address. - [https://myip.now.sh](https://myip.now.sh)
 
 Built with:
 
