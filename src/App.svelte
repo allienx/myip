@@ -1,7 +1,7 @@
 <script>
   import { afterUpdate, onMount } from 'svelte'
   import { About } from '~/components/About'
-  import { IpAddressContainer } from '~/components/IpAddress'
+  import { IpAddress } from '~/components/IpAddress'
   import { IpGeoDataContainer } from '~/components/IpGeoData'
   import { Tabs, TabList, Tab, TabContent } from '~/components/Tabs'
   import { ipInfo } from '~/stores/global'
@@ -51,9 +51,8 @@
     </TabList>
 
     <TabContent id={TabIds.IP}>
-      <IpAddressContainer />
-
       {#if ip}
+        <IpAddress ip={$ipInfo.data.ip} />
         <IpGeoDataContainer {ip} />
       {/if}
     </TabContent>

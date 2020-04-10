@@ -10,7 +10,7 @@
 
 <style>
   .content {
-    @apply p-5;
+    @apply p-4;
   }
 </style>
 
