@@ -70,10 +70,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      { from: './src/static/favicon' },
-      { from: './src/static/img', to: 'img' },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './src/static/favicon' },
+        { from: './src/static/img', to: 'img' },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
