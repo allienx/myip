@@ -13,7 +13,7 @@ function createAsyncStore(asyncFn) {
   })
 
   const fetch = async (...args) => {
-    update(state => {
+    update((state) => {
       return {
         ...state,
         isLoaded: false,
@@ -23,7 +23,7 @@ function createAsyncStore(asyncFn) {
 
     const { err, data } = await asyncFn(...args)
 
-    update(state => {
+    update((state) => {
       return {
         ...state,
         isLoaded: true,
