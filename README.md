@@ -1,27 +1,37 @@
-# Svelte Example
+# ip lookup
 
-This directory is a brief example of a [Svelte](https://svelte.dev/) app with [Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction) that can be deployed with ZEIT Now and zero configuration.
+Simple web app that looks up your IP address. - [https://myip.now.sh](https://myip.now.sh)
 
-## Deploy Your Own
+Built with:
 
-Deploy your own Svelte project, along with Serverless Functions, with ZEIT Now.
+- [svelte](https://svelte.dev)
+- [tailwindcss](https://tailwindcss.com)
+- [go](https://golang.org)
+- [clipboard.js](https://clipboardjs.com)
+- [ipapi](https://ipapi.com)
+- [flagpedia](https://flagpedia.net)
+- [favicon.io](https://favicon.io)
+- [RealFaviconGenerator](https://realfavicongenerator.net)
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/zeit/now/tree/master/examples/svelte)
+Hosted with [ZEIT Now](https://zeit.co)
 
-_Live Example: https://svelte.now-examples.now.sh_
+## Local Development
 
-### How We Created This Example
+Requires:
 
-To get started with Svelte, along with [Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction), deployed with ZEIT Now, you can use [degit](https://github.com/Rich-Harris/degit) to initialize the project:
+- [nodejs](https://nodejs.org/en/)
+- [yarn](https://yarnpkg.com/)
+- [go](https://golang.org)
 
-```shell
-$ npx degit sveltejs/template my-svelte-project
-```
+```sh
+# Install nodejs dependencies.
+yarn install
 
-### Deploying From Your Terminal
+# Install goreload.
+go get -u github.com/acoshift/goreload
 
-You can deploy your new Svelte project, along with [Serverless Functions](https://zeit.co/docs/v2/serverless-functions/introduction), with a single command from your terminal using [Now CLI](https://zeit.co/download):
+# Start local api and webpack servers.
+yarn start
 
-```shell
-$ now
+http://localhost:1234
 ```

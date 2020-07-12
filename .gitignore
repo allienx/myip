@@ -1,5 +1,9 @@
 .DS_Store
-node_modules
-public/bundle.*
+.goreload
+.idea/
+
+dist/
+node_modules/
+
 .env
 .env.build

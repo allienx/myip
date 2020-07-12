@@ -1,10 +1,10 @@
-import App from './App.svelte';
+// Import tailwind styles before app styles for proper cascading.
+import './main.pcss'
+
+import App from './App.svelte'
 
 const app = new App({
   target: document.body,
-  props: {
-    name: 'world',
-  },
-});
+})
 
-export default app;
+export default app
