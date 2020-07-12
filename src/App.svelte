@@ -3,8 +3,9 @@
   import { About } from '~/components/About'
   import { IpAddress } from '~/components/IpAddress'
   import { IpGeoDataContainer } from '~/components/IpGeoData'
+  import { LoadingSpinner } from '~/components/LoadingSpinner'
   import { Tabs, TabList, Tab, TabContent } from '~/components/Tabs'
-  import { ipInfo } from '~/stores/global'
+  import { ipInfo, ipGeoData } from '~/stores/global'
 
   const TabIds = {
     IP: 'ip',
@@ -12,6 +13,8 @@
   }
 
   let ip = undefined
+  let isLoadingIpInfo = true
+  let isLoadingIpGeoData = true
 
   onMount(async () => {
     // Initialize global stores.
@@ -19,7 +22,16 @@
   })
 
   afterUpdate(() => {
+    console.log('afterUpdate.$ipInfo', $ipInfo)
+    console.log('afterUpdate.$ipGeoData', $ipGeoData)
+
     ip = $ipInfo.data && $ipInfo.data.ip
+    isLoadingIpInfo = !$ipInfo.isLoaded || $ipInfo.isFetching
+    isLoadingIpGeoData = !$ipGeoData.isLoaded || $ipGeoData.isFetching
+
+    if (ip && !$ipGeoData.isLoaded && !$ipGeoData.isFetching) {
+      ipGeoData.fetch(ip)
+    }
   })
 </script>
 
@@ -51,9 +63,11 @@
     </TabList>
 
     <TabContent id={TabIds.IP}>
-      {#if ip}
+      {#if isLoadingIpInfo || isLoadingIpGeoData}
+        <LoadingSpinner class="mx-auto" />
+      {:else}
         <IpAddress ip={$ipInfo.data.ip} />
-        <IpGeoDataContainer {ip} />
+        <IpGeoDataContainer />
       {/if}
     </TabContent>
 
