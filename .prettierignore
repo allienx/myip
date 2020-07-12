@@ -1,0 +1,21 @@
+### Ignore everything in gitignore
+.DS_Store
+.goreload
+.idea/
+
+dist/
+node_modules/
+
+.env
+.env.build
+### End gitignore
+
+api/
+
+.gitignore
+.nowignore
+.nvmrc
+.tool-versions
+go.mod
+server.go
+yarn.lock
