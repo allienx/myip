@@ -3,6 +3,7 @@
   import { About } from '~/components/About'
   import { IpAddress } from '~/components/IpAddress'
   import { IpGeoDataContainer } from '~/components/IpGeoData'
+  import { GithubLogo } from '~/components/GithubLogo'
   import { LoadingSpinner } from '~/components/LoadingSpinner'
   import { Tabs, TabList, Tab, TabContent } from '~/components/Tabs'
   import { ipInfo, ipGeoData } from '~/stores/global'
@@ -35,26 +36,8 @@
   })
 </script>
 
-<style>
-  main {
-    @apply w-full max-w-screen-sm mx-auto flex-grow flex-shrink-0 px-3 pt-12;
-  }
-
-  h1 {
-    @apply mb-12 font-mono font-bold text-5xl text-center;
-  }
-
-  footer {
-    @apply flex flex-shrink-0 justify-center items-center;
-  }
-
-  .github {
-    @apply p-4;
-  }
-</style>
-
-<main class="md:text-xl text-gray-900">
-  <h1>ip lookup</h1>
+<main class="w-full max-w-screen-sm mx-auto flex-grow flex-shrink-0 px-3 pt-12">
+  <h1 class="mb-12 font-mono font-bold text-5xl text-center">ip lookup</h1>
 
   <Tabs>
     <TabList>
@@ -77,12 +60,12 @@
   </Tabs>
 </main>
 
-<footer>
+<footer class="flex flex-shrink-0 justify-center items-center">
   <a
-    class="github"
+    class="p-4"
     href="https://github.com/allienx/myip"
     target="_blank"
     rel="noopener noreferrer">
-    <img width="25" src="img/github.svg" alt="GitHub logo" />
+    <GithubLogo />
   </a>
 </footer>
