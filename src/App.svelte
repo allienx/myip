@@ -1,48 +1,74 @@
 <script>
-  import { onMount } from "svelte";
-  export let date;
+  import { afterUpdate, onMount } from 'svelte'
+  import { About } from '~/components/About'
+  import { IpAddress } from '~/components/IpAddress'
+  import { IpGeoDataContainer } from '~/components/IpGeoData'
+  import { Tabs, TabList, Tab, TabContent } from '~/components/Tabs'
+  import { ipInfo } from '~/stores/global'
+
+  const TabIds = {
+    IP: 'ip',
+    ABOUT: 'about',
+  }
+
+  let ip = undefined
 
   onMount(async () => {
-    const res = await fetch("/api/date");
-    const newDate = await res.text();
-    date = newDate;
-  });
+    // Initialize global stores.
+    await ipInfo.fetch()
+  })
+
+  afterUpdate(() => {
+    ip = $ipInfo.data && $ipInfo.data.ip
+  })
 </script>
 
-<main>
-  <h1>Svelte + Node.js API</h1>
-  <h2>
-    Deployed with
-    <a href="https://zeit.co/docs" target="_blank" rel="noreferrer noopener">
-      ZEIT Now
-    </a>
-    !
-  </h2>
-  <p>
-    <a
-      href="https://github.com/zeit/now/tree/master/examples/svelte"
-      target="_blank"
-      rel="noreferrer noopener">
-      This project
-    </a>
-    is a
-    <a href="https://svelte.dev/">Svelte</a>
-    app with three directories,
-    <code>/public</code>
-    for static assets,
-    <code>/src</code>
-    for components and content, and
-    <code>/api</code>
-    which contains a serverless
-    <a href="https://nodejs.org/en/">Node.js</a>
-    function. See
-    <a href="/api/date">
-      <code>api/date</code>
-      for the Date API with Node.js
-    </a>
-    .
-  </p>
-  <br />
-  <h2>The date according to Node.js is:</h2>
-  <p>{date ? date : 'Loading date...'}</p>
+<style>
+  main {
+    @apply w-full max-w-screen-sm mx-auto flex-grow flex-shrink-0 px-3 pt-12;
+  }
+
+  h1 {
+    @apply mb-12 font-mono font-bold text-5xl text-center;
+  }
+
+  footer {
+    @apply flex flex-shrink-0 justify-center items-center;
+  }
+
+  .github {
+    @apply p-4;
+  }
+</style>
+
+<main class="md:text-xl text-gray-900">
+  <h1>ip lookup</h1>
+
+  <Tabs>
+    <TabList>
+      <Tab id={TabIds.IP}>My IP</Tab>
+      <Tab id={TabIds.ABOUT}>About</Tab>
+    </TabList>
+
+    <TabContent id={TabIds.IP}>
+      {#if ip}
+        <IpAddress ip={$ipInfo.data.ip} />
+        <IpGeoDataContainer {ip} />
+      {/if}
+    </TabContent>
+
+    <TabContent id={TabIds.ABOUT}>
+      <About />
+    </TabContent>
+  </Tabs>
 </main>
+
+<footer>
+  <a
+    class="github"
+    href="https://github.com/allienx/myip"
+    target="_blank"
+    rel="noopener noreferrer">
+    <img width="25" src="img/github.svg" alt="GitHub logo" />
+  </a>
+</footer>
