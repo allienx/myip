@@ -23,9 +23,6 @@
   })
 
   afterUpdate(() => {
-    console.log('afterUpdate.$ipInfo', $ipInfo)
-    console.log('afterUpdate.$ipGeoData', $ipGeoData)
-
     ip = $ipInfo.data && $ipInfo.data.ip
     isLoadingIpInfo = !$ipInfo.isLoaded || $ipInfo.isFetching
     isLoadingIpGeoData = !$ipGeoData.isLoaded || $ipGeoData.isFetching

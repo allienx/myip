@@ -1,36 +1,39 @@
 <script>
-  import Clipboard from 'clipboard'
-  import { onMount } from 'svelte'
+  import copy from 'copy-text-to-clipboard'
+  import { CheckIcon } from '~/components/CheckIcon'
+  import { ClippyIcon } from '~/components/ClippyIcon'
 
   export let ip
+  export let hasCopied = false
 
-  onMount(() => {
-    new Clipboard('.clippy')
-  })
+  // Copy IP address to cliboard and flash check icon.
+  // Don't do anything when the checkmark is clicked
+  export let handleCopyClick = () => {
+    if (hasCopied) {
+      return
+    }
+
+    const success = copy(ip)
+
+    if (!success) {
+      return
+    }
+
+    hasCopied = true
+
+    setTimeout(() => {
+      hasCopied = false
+    }, 1500)
+  }
 </script>
 
-<style>
-  div {
-    @apply flex justify-center mx-auto my-8;
-  }
-
-  code {
-    @apply cursor-pointer p-4 mr-4 bg-gray-200 rounded font-mono;
-  }
-
-  button {
-    @apply mx-4;
-  }
-</style>
-
-<div>
-  <code id="ip-address" class="clippy md:text-2xl" data-clipboard-text={ip}>
-    {ip}
-  </code>
-  <button
-    class="clippy"
-    data-clipboard-target="#ip-address"
-    title="Copy to clipboard">
-    <img width="25" src="img/clippy.svg" alt="Copy to clipboard" />
+<div class="mx-auto my-8 flex justify-center">
+  <code class="p-4 mr-4 bg-gray-200 rounded font-mono md:text-2xl">{ip}</code>
+  <button class="mx-4" on:click={handleCopyClick} title="Copy to clipboard">
+    {#if hasCopied}
+      <CheckIcon />
+    {:else}
+      <ClippyIcon />
+    {/if}
   </button>
 </div>

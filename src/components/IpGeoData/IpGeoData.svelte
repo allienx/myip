@@ -1,6 +1,4 @@
 <script>
-  import Clipboard from 'clipboard'
-  import { onMount } from 'svelte'
   import { CountryFlag } from '~/components/CountryFlag'
 
   export let lat
@@ -11,17 +9,9 @@
   export let country
   export let countryCode
   export let timezone
-
-  onMount(() => {
-    new Clipboard('.clippy')
-  })
 </script>
 
 <style>
-  table {
-    @apply mx-auto;
-  }
-
   tr {
     @apply cursor-pointer mb-4;
 
@@ -43,47 +33,43 @@
   .spacer {
     @apply h-3;
   }
-
-  .country {
-    @apply flex items-center;
-  }
 </style>
 
-<table>
-  <tr class="clippy" data-clipboard-text={lat}>
+<table class="mx-auto">
+  <tr>
     <td>Latitude</td>
     <td>{lat}</td>
   </tr>
   <tr class="spacer" />
-  <tr class="clippy" data-clipboard-text={lon}>
+  <tr>
     <td>Longitude</td>
     <td>{lon}</td>
   </tr>
   <tr class="spacer" />
-  <tr class="clippy" data-clipboard-text={city}>
+  <tr>
     <td>City</td>
     <td>{city}</td>
   </tr>
   <tr class="spacer" />
-  <tr class="clippy" data-clipboard-text={region}>
+  <tr>
     <td>Region</td>
     <td>{region}</td>
   </tr>
   <tr class="spacer" />
-  <tr class="clippy" data-clipboard-text={postalCode}>
+  <tr>
     <td>Postal Code</td>
     <td>{postalCode}</td>
   </tr>
   <tr class="spacer" />
-  <tr class="clippy" data-clipboard-text={country}>
+  <tr>
     <td>Country</td>
-    <td class="country">
+    <td class="flex items-center">
       {country}
       <CountryFlag class="ml-3" width="45" {countryCode} />
     </td>
   </tr>
   <tr class="spacer" />
-  <tr class="clippy" data-clipboard-text={timezone}>
+  <tr>
     <td>Timezone</td>
     <td>{timezone}</td>
   </tr>
