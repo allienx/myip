@@ -1,6 +1,10 @@
 <style>
   li {
-    @apply ml-8 pt-2;
+    @apply mt-2;
+  }
+
+  li:first-child {
+    @apply mt-0;
   }
 
   a {
@@ -15,9 +19,9 @@
 </style>
 
 <div class="text-center">
-  <p class="m-2">Simple web app that looks up your IP address.</p>
+  <p class="p-2">Simple web app that looks up your IP address.</p>
 
-  <ul class="m-2 my-5">
+  <ul class="px-2 py-5 list-none">
     <li>
       <a href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
         svelte
