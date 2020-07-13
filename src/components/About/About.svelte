@@ -32,16 +32,24 @@
       </a>
     </li>
     <li>
-      <a href="https://golang.org" target="_blank" rel="noopener noreferrer">
-        go
+      <a
+        href="https://github.com/sindresorhus/copy-text-to-clipboard"
+        target="_blank"
+        rel="noopener noreferrer">
+        copy-text-to-clipboard
       </a>
     </li>
     <li>
       <a
-        href="https://clipboardjs.com"
+        href="https://github.com/primer/octicons"
         target="_blank"
         rel="noopener noreferrer">
-        clipboard.js
+        octicons
+      </a>
+    </li>
+    <li>
+      <a href="https://golang.org" target="_blank" rel="noopener noreferrer">
+        go
       </a>
     </li>
     <li>

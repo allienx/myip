@@ -4,9 +4,9 @@ Simple web app that looks up your IP address. - [https://myip.now.sh](https://my
 
 - [svelte](https://svelte.dev)
 - [tailwindcss](https://tailwindcss.com)
-- [go](https://golang.org)
 - [copy-text-to-clipboard](https://github.com/sindresorhus/copy-text-to-clipboard)
 - [octicons](https://github.com/primer/octicons)
+- [go](https://golang.org)
 - [ipapi](https://ipapi.com)
 - [flagpedia](https://flagpedia.net)
 - [favicon.io](https://favicon.io)
