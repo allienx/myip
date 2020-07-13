@@ -10,7 +10,7 @@
       <Alert msg="Fetching the IP address details failed." />
     </div>
   {:else}
-    <div class="text-center">
+    <div>
       <IpGeoData
         lat={$ipGeoData.data.lat}
         lon={$ipGeoData.data.lon}
