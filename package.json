@@ -2,10 +2,10 @@
   "name": "myip",
   "version": "1.0.0",
   "description": "Simple web app that looks up your IP address.",
+  "private": true,
   "repository": "https://github.com/allienx/myip",
   "author": "Alex Lin",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "start:api": "goreload server.go",
