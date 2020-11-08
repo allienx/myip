@@ -8,6 +8,7 @@ const sveltePreprocess = require('svelte-preprocess')
 
 const mode = process.env.NODE_ENV || 'development'
 const prod = mode === 'production'
+const PORT = 1234
 
 const outputDir = path.join(__dirname, 'dist')
 
@@ -60,7 +61,7 @@ module.exports = {
   devServer: {
     contentBase: outputDir,
     compress: true,
-    port: 1234,
+    port: PORT,
     proxy: [
       {
         context: ['/api'],

@@ -30,6 +30,15 @@ go get -u github.com/acoshift/goreload
 
 # Start local api and webpack servers.
 yarn start
-
-http://localhost:1234
 ```
+
+Running at [http://localhost:1234](http://localhost:1234)
+
+## Local Production Build
+
+```sh
+yarn build
+yarn serve
+```
+
+Running at [http://localhost:1234](http://localhost:1234)
