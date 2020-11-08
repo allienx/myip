@@ -1,9 +1,10 @@
 <script>
   import { afterUpdate, onMount } from 'svelte'
   import { About } from '~/components/About'
+  import { Alert } from '~/components/Alert'
   import { IpAddress } from '~/components/IpAddress'
   import { IpGeoDataContainer } from '~/components/IpGeoData'
-  import { GithubLogo } from '~/components/GithubLogo'
+  import { GitHubIcon } from '~/components/Icons/GitHubIcon'
   import { LoadingSpinner } from '~/components/LoadingSpinner'
   import { Tabs, TabList, Tab, TabContent } from '~/components/Tabs'
   import { ipInfo, ipGeoData } from '~/stores/global'
@@ -44,7 +45,13 @@
 
     <TabContent id={TabIds.IP}>
       {#if isLoadingIpInfo || isLoadingIpGeoData}
-        <LoadingSpinner class="mx-auto" />
+        {#if $ipInfo.err}
+          <div class="max-w-lg mx-auto text-center">
+            <Alert msg="Something went wrong fetching your IP address." />
+          </div>
+        {:else}
+          <LoadingSpinner class="mx-auto" />
+        {/if}
       {:else}
         <IpAddress ip={$ipInfo.data.ip} />
         <IpGeoDataContainer />
@@ -63,6 +70,6 @@
     href="https://github.com/allienx/myip"
     target="_blank"
     rel="noopener noreferrer">
-    <GithubLogo />
+    <GitHubIcon />
   </a>
 </footer>

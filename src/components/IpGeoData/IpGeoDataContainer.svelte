@@ -1,5 +1,5 @@
 <script>
-  import Alert from '../Alert/Alert.svelte'
+  import { Alert } from '~/components/Alert'
   import { ipGeoData } from '~/stores/global'
   import IpGeoData from './IpGeoData'
 </script>
@@ -7,7 +7,7 @@
 {#if $ipGeoData.isLoaded}
   {#if $ipGeoData.err}
     <div class="max-w-lg mx-auto text-center">
-      <Alert msg="Fetching the IP address details failed." />
+      <Alert msg="Something went wrong fetching your IP address details." />
     </div>
   {:else}
     <div>

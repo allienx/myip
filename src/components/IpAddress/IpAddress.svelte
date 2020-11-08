@@ -1,7 +1,7 @@
 <script>
   import copy from 'copy-text-to-clipboard'
-  import { CheckIcon } from '~/components/CheckIcon'
-  import { ClippyIcon } from '~/components/ClippyIcon'
+  import { CheckIcon } from '~/components/Icons/CheckIcon'
+  import { ClippyIcon } from '~/components/Icons/ClippyIcon'
 
   export let ip
   export let hasCopied = false

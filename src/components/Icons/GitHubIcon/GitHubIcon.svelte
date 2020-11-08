@@ -6,7 +6,7 @@
 <svg
   {width}
   {height}
-  class="cursor-pointer fill-current text-gray-900 hover:text-gray-700"
+  class="cursor-pointer fill-current text-gray-400 hover:text-gray-600"
   viewBox="0 0 16 16"
   role="link"
   aria-hidden="true">
