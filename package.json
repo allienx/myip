@@ -8,16 +8,17 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
+    "start": "run-p start:api start:client",
     "start:api": "goreload server.go",
     "start:client": "webpack-dev-server",
-    "start": "run-p start:api start:client",
-    "run:prettier": "prettier --write ."
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.0",
     "copy-text-to-clipboard": "^2.2.0",
-    "svelte": "^3.20.1",
-    "tailwindcss": "^1.2.0"
+    "svelte": "^3.29.4",
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
@@ -36,7 +37,7 @@
     "pretty-quick": "^2.0.1",
     "style-loader": "^1.1.3",
     "svelte-loader": "^2.13.6",
-    "svelte-preprocess": "^3.7.1",
+    "svelte-preprocess": "^4.5.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
