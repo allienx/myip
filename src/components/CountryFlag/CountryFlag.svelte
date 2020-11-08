@@ -8,6 +8,4 @@
   const alt = `${countryCode.toUpperCase()} flag`
 </script>
 
-{#if countryCode}
-  <img class={className} {width} {src} {alt} />
-{/if}
+{#if countryCode}<img class={className} {width} {src} {alt} />{/if}
